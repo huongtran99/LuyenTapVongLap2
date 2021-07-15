@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện Tập Vòng Lặp 2</title>
+</head>
+<body>
+<button onclick="lesson1()">Bài 1</button>
+<button onclick="lesson2()">Bài 2</button>
+<button onclick="lesson3()">Bài 3</button>
+<button onclick="lesson4()">Bài 4</button>
+<button onclick="lesson6()">Bài 6</button>
+<br> <br>
+<span id="result">lesson 1</span>
+<script>
+    /*Bài 1: In dãy Finonaci*/
+    function lesson1() {
+        let a = 0;
+        let b = 1;
+        let c;
+        let numbers = parseInt(prompt("Nhập vào số lượng cần hiển thị"));
+        document.getElementById("result").innerHTML = numbers + " Số Fibonacci: " + b + " ";
+        for (let i = 0; i < numbers; i++) {
+            c = a + b;
+            document.getElementById("result").innerHTML += c + " ";
+            a = b;
+            b = c;
+        }
+    }
+
+    /*Bài 2: Tính giai thừa của một số nguyên dương*/
+
+    function lesson2() {
+        let number = parseInt(prompt("Nhập Vào 1 Số Nguyên Dương"));
+        let giaiThua = 1;
+        for (let i = 1; i <= number; i++) {
+            giaiThua = giaiThua * i;
+        }
+        alert(giaiThua);
+    }
+
+    /*Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau*/
+    function lesson3() {
+        for (let i = 1; i < 6; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>");
+
+        for (let i = 1; i < 6; i++) {
+            for (let j = 6; j > i; j--) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+        for (let i = 1; i < 6; i++) {
+            for (let j = 1; j < 6; j++) {
+                if (i == 1 && (j == 1 || j == 2 || j == 3 || j == 4)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 2 && (j == 1 || j == 2 || j == 3)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 3 && (j == 1 || j == 2)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 4 && j == 1) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else {
+                    document.write("* ");
+                }
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+
+        let k = "&#160;&#160;&#160;";
+        for (let i = 1; i < 6; i++) {
+            for (let j = 1; j <= (6 - i); j++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+            document.write(k);
+            if (i == 2) {
+                document.write(k);
+            } else if (i == 3) {
+                document.write(k + k);
+            } else if (i == 4) {
+                document.write(k + k + k);
+            }
+        }
+    }
+
+    /*Bài 4: In hình chữ nhật*/
+    function lesson4() {
+        let i, j;
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= 5; j++) {
+                if ((i == 2 || i == 3 || i == 4) && (j == 2 || j == 3 || j == 4)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                }
+                document.write("* ");
+
+            }
+            document.write("<br>");
+        }
+    }
+
+
+    //Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu,
+    // số tháng cho vay và lãi xuất hàng tháng.
+
+
+    //Bài 6: In hình trái tim
+
+    function lesson6() {
+        for (let i = 1; i < 7; i++) {
+            for (let j = 1; j <= 7; j++) {
+                if (i == 1 && (j == 1 || j == 4 || j == 7)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 2 && (j == 2 || j == 3 || j == 5 || j == 6)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 3 && (j == 2 || j == 3 || j == 4 || j == 5 || j == 6)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 4 && (j == 1 || j == 3 || j == 4 || j == 5 || j == 7)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 5 && (j == 1 || j == 2 || j == 4 || j == 6 || j == 7)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else if (i == 6 && (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)) {
+                    document.write("&#160;&#160;&#160;");
+                    continue;
+                } else {
+                    document.write("* ");
+                }
+
+            }
+            document.write("<br>");
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
